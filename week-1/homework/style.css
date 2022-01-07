@@ -169,10 +169,6 @@ body {
 
 @media only screen and (min-width: 800px){
 
-	}
-
-@media only screen and (min-width: 1200px){
-
 	body,
 	.header-nav,
 	.nav-item,
@@ -191,6 +187,7 @@ body {
 	.header-nav {
 		justify-content: flex-start;
 	}
+	
 	.nav-item {
 		margin: auto 0 auto auto;
 		padding-right: 5vw;
@@ -209,7 +206,9 @@ body {
 		flex: 5;
 	}
 	.section{
-		width: 1200px;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100vw;
 	}
 	.box {
 		width: 45%;
@@ -220,4 +219,13 @@ body {
 		flex-direction: column;
 		justify-content: center;
 	}
+
+}
+
+@media only screen and (min-width: 1200px){
+
+	.section{
+		width: 1200px;
+	}
+
 }
