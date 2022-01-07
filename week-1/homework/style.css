@@ -156,7 +156,6 @@ body {
   Media Queries
 ==================================== */
 
-
 @media only screen and (max-width: 500px),
 						print {
 	
@@ -164,14 +163,9 @@ body {
 
 @media only screen and (min-width: 500px){
 
-
-}
-
-@media only screen and (min-width: 800px){
-
 	body,
 	.header-nav,
-	.nav-item,
+	.menu-icon,
 	.main,
 	.article_h,
 	.section,
@@ -187,11 +181,20 @@ body {
 	.header-nav {
 		justify-content: flex-start;
 	}
-	
 	.nav-item {
+		display: none;
+	}
+	.menu-icon{
 		margin: auto 0 auto auto;
 		padding-right: 5vw;
 		padding-top: 5px;
+		flex-direction: column;
+	}
+	.icon-bar {
+		width: 35px;
+  	height: 2px;
+  	background-color: black;
+  	margin: 3px 0;
 	}
 	.main {
 		flex-direction: column;
@@ -222,10 +225,24 @@ body {
 
 }
 
+@media only screen and (min-width: 800px){
+
+	.nav-item {
+		display: flex;
+		order: 1;
+		margin: auto 0 auto auto;
+		padding-right: 5vw;
+		padding-top: 5px;
+	}
+
+	.icon-bar {
+		display: none;
+	}
+}
+
 @media only screen and (min-width: 1200px){
 
 	.section{
 		width: 1200px;
 	}
-
 }
