@@ -1,0 +1,351 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+/*框架*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0; padding: 0;  /*網頁通常預設是8px*/
+	font-size: 100%; /*讓字型大小設定配合瀏覽器預設值,可以隨著螢幕大小變化*/
+	line-height: 1.5; /*行高預設*/
+}
+
+main {
+	margin: 0;
+}
+
+/*段落*/
+h1, h2, h3, h4 {
+	margin: 1em 0 .5em; /*設置讓標題對應接近底下內文*/
+	line-height: 1.25; /*字型大標題建議使用小一點的行高*/
+	font-weight: bold; /*標題字體加粗*/
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1em; }
+
+ul, ol {
+	margin: 1em 0; /*除了IE之外其他瀏覽器預設值*/
+	/*padding-left: 40px; 大部分瀏覽器預設, IE是40px margin-left*/
+	list-style: none; /*列表開頭符號形式*/
+}
+
+li {
+	margin: 0 0.5em;
+}
+
+p {
+	margin: 1em 0
+}
+
+figure { /*含標題的圖片影片媒體元素*/
+	margin: 1em 0
+}
+
+blockquote { /*引用*/
+	margin: 1em 40px;
+}
+
+/*連結*/
+a {
+	text-decoration: underline;/*連結下劃線外觀設定*/
+}
+/*寫入順序不能變,後面會蓋掉前面,link-visit-hover-active*/
+a:link {color: #0000EE;} /*未連結-藍色*/
+a:visited {color: #551A8B;} /*已連結過-紫色*/
+a:focus {/*---*/} /*按TAB聚焦顏色*/
+a:hover {/*---*/} /*滑鼠移到連結*/
+a:active {color: #EE0000;} /*點擊運作時-紅色*/
+a:active, a:hover { outline: none; } /*外框線設置*/
+
+a img{ 
+	border: none 
+}/*連結圖案不要有外框*/
+
+sup, sub { 
+	line-height: 0
+}/*避免上下標出現行的第一字*/
+
+/*其他*/
+q, cite {
+	font-style: italic;
+} /*引用字體使用斜體*/
+
+
+/* q:before, q:after {
+content: "";
+} 刪除自動出現的引號*/
+
+/*表單*/
+/*fieldset { --用在填寫表單時候把同一大題題目跟選項框列在一起的標籤--
+  margin: 0; --原預設值為 0 2px --
+  padding: 0; --原預設值為: `.35em .625em .75em`--
+  border: none;
+}
+
+input, button, select {
+  vertical-align: middle; --讓表單內容資料置中對齊--
+}*/
+
+/*表格*/
+table {
+  border-collapse: collapse; /*格子與格子間沒有間隙*/
+  /* border-collapse: separate; border-spacing: 2px; 格子與格子間有間隙*/
+}
+
+td, th {
+  padding: 1px; /* 瀏覽器預設值,設置"0"可以刪掉文字跟框之間空白*/
+  vertical-align: middle; /* 內文跟表格上下垂直對齊的狀況 */
+  text-align: left; /* 內文跟表格左右水平對齊的狀況,原預設值是置中 */
+}
+
+td:first-child, th:first-child {
+  empty-cells: hide; /*內容第一行第一字不用縮排(預設有)*/
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.m-header {
+	background-color: #F3EFD7FF;
+}
+
+.nav-title,
+.nav-logo {
+	margin: auto 1em;
+}
+
+.nav-item {
+	margin: 0;
+	text-align: center;
+}
+
+.article_h {
+	background-color: #CCE5FEFF;
+}
+
+.a_h-title {
+	text-align: center;
+}
+
+.article_b h2 {
+	text-align:center;
+}
+
+.box h3 {
+	text-align:center;
+	font-size: 1em;
+}
+
+.section {
+	width : 75vw;
+	margin: 0 auto;
+}
+
+.box {
+	background-color: #ADB6C6FF;
+	width: 580px;
+	height: 200px;
+}
+
+.m-footer {
+	background-color: #CCE5FEFF;
+	width: 100px;
+	margin: 10px auto;
+}
+
+.m-footer p {
+	text-align: center;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media only screen and (max-width: 500px),print {
+	
+	body,
+	.header-nav,
+	.menu-icon,
+	.main,
+	.article_h,
+	.section,
+	.m-footer {
+		display: flex;
+	}
+
+	body{
+		flex-direction: column;
+	}
+
+	.m-header{
+		flex: 1;
+	}
+
+	.header-nav {
+		justify-content: flex-start;
+	}
+
+	.nav-item {
+		display: none;
+	}
+
+	.menu-icon{
+		margin: auto 0 auto auto;
+		padding-right: 5vw;
+		padding-top: 5px;
+		flex-direction: column;
+	}
+
+	.icon-bar {
+		width: 35px;
+  	height: 2px;
+  	background-color: black;
+  	margin: 3px 0;
+	}
+
+	.main {
+		flex-direction: column;
+		flex: 16;
+	}
+
+	.article_h{
+		flex-direction: column;
+		justify-content: center;
+		flex: 2;
+	}
+
+	.article_b{
+		flex: 5;
+	}
+
+	.section{
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100vw;
+	}
+
+	.box {
+		width: 100%;
+		margin: 10px;
+	}
+
+	.m-footer{
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+
+@media only screen and (min-width: 500px){
+
+	body,
+	.header-nav,
+	.menu-icon,
+	.main,
+	.article_h,
+	.section,
+	.m-footer {
+		display: flex;
+	}
+
+	body{
+		flex-direction: column;
+	}
+
+	.m-header{
+		flex: 1;
+	}
+
+	.header-nav {
+		justify-content: flex-start;
+	}
+
+	.nav-item {
+		display: none;
+	}
+
+	.menu-icon{
+		margin: auto 0 auto auto;
+		padding-right: 5vw;
+		padding-top: 5px;
+		flex-direction: column;
+	}
+
+	.icon-bar {
+		width: 35px;
+  	height: 2px;
+  	background-color: black;
+  	margin: 3px 0;
+	}
+
+	.main {
+		flex-direction: column;
+		flex: 16;
+	}
+
+	.article_h{
+		flex-direction: column;
+		justify-content: center;
+		flex: 2;
+	}
+
+	.article_b{
+		flex: 5;
+	}
+
+	.section{
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100vw;
+	}
+
+	.box {
+		width: 45%;
+		margin: 10px;
+	}
+
+	.m-footer{
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+
+@media only screen and (min-width: 800px){
+
+	.nav-item {
+		display: flex;
+		order: 1;
+		margin: auto 0 auto auto;
+		padding-right: 5vw;
+		padding-top: 5px;
+	}
+
+	.icon-bar {
+		display: none;
+	}
+
+}
+
+@media only screen and (min-width: 1200px){
+
+	.section{
+		width: 1200px;
+	}
+	
+}
