@@ -31,7 +31,7 @@ h3 { font-size: 1.2em; }
 h4 { font-size: 1em; }
 
 ul, ol {
-	margin: 1em 0; /*除了IE之外其他瀏覽器預設值*/
+	/*margin: 1em 0; 除了IE之外其他瀏覽器預設值*/
 	/*padding-left: 40px; 大部分瀏覽器預設, IE是40px margin-left*/
 	list-style: none; /*列表開頭符號形式*/
 }
@@ -170,6 +170,7 @@ body {
 }
 
 
+
 /* ================================= 
   Media Queries
 ==================================== */
@@ -285,13 +286,6 @@ body {
 		flex-direction: column;
 	}
 
-	.icon-bar {
-		width: 35px;
-  	height: 2px;
-  	background-color: black;
-  	margin: 3px 0;
-	}
-
 	.main {
 		flex-direction: column;
 		flex: 16;
@@ -336,7 +330,7 @@ body {
 		padding-top: 5px;
 	}
 
-	.icon-bar {
+	.menu-icon {
 		display: none;
 	}
 
