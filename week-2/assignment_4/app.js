@@ -2,6 +2,10 @@ let h1 = document.querySelector('h1');
 let menu = document.querySelector('.menu-icon');
 let nav = document.querySelector('.nav-item');
 let a = document.querySelector('.xicon');
+let ul = document.querySelector('ul');
+let button = document.querySelector('button');
+let extend = document.querySelector('.extend');
+
 h1.addEventListener('click',()=>{
 	if(h1.textContent == `Have a Good Time!`){
 		h1.innerHTML = `Welcome Message`;
@@ -28,10 +32,19 @@ menu.addEventListener('click',()=>{
 	}
 });
 
-document.querySelector('ul').addEventListener('click',()=>{
+ul.addEventListener('click',()=>{
 	nav.style.display = 'none';
 	nav.querySelector('li:first-child').remove();
 })
 
+button.addEventListener('click',()=>{
+	if(extend.style.display !== 'flex'){
+		extend.style.display = 'flex';
+		button.textContent = 'Hide List';
+	}else{
+		extend.style.display = 'none';
+		button.textContent = 'Show More';
+	}
+})
 
 
