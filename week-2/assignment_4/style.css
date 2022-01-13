@@ -87,11 +87,11 @@ content: "";
   margin: 0; --原預設值為 0 2px --
   padding: 0; --原預設值為: `.35em .625em .75em`--
   border: none;
-}
+}*/
 
 input, button, select {
-  vertical-align: middle; --讓表單內容資料置中對齊--
-}*/
+  vertical-align: middle; /*--讓表單內容資料置中對齊--*/
+}
 
 /*表格*/
 table {
@@ -160,6 +160,11 @@ body {
 }
 
 .m-footer {
+	width: 100px;
+	margin: 10px auto;
+}
+
+.article_f {
 	background-color: #CCE5FEFF;
 	width: 100px;
 	margin: 10px auto;
@@ -168,6 +173,7 @@ body {
 .m-footer p {
 	text-align: center;
 }
+
 
 
 
@@ -243,6 +249,13 @@ body {
 		margin: 10px;
 	}
 
+	.action {
+		width: 100px;
+		height: 50px;
+		margin: 10px auto;
+	}
+
+
 	.m-footer{
 		flex: 1;
 		flex-direction: column;
@@ -294,11 +307,11 @@ body {
 	.article_h{
 		flex-direction: column;
 		justify-content: center;
-		flex: 2;
+		flex: 6;
 	}
 
 	.article_b{
-		flex: 5;
+		flex: 10;
 	}
 
 	.section{
@@ -312,10 +325,20 @@ body {
 		margin: 10px;
 	}
 
+	.action {
+		width: 100px;
+		height: 50px;
+		margin: 10px auto;
+	}
+
 	.m-footer{
 		flex: 1;
 		flex-direction: column;
 		justify-content: center;
+	}
+
+	.extend {
+		display: none;
 	}
 
 }
