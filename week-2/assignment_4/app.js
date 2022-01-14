@@ -15,11 +15,12 @@ h1.addEventListener('click',()=>{
 });
 
 menu.addEventListener('click',()=>{
-	if(menu.scr=`src=img/menu_icon.png`){
-		nav.insertAdjacentHTML(
-			'afterbegin',
-			`<li style='text-align: right' ><img class='xicon' src=img/x_icon.png></li>`
-		);
+	if(nav.style.display === ''){
+		menu.src = `img/x_icon.png`;
+		menu.style.paddingRight = `32px`;
+		menu.style.paddingLeft = `121px`;
+		menu.style.background = 'white';
+		nav.style.marginTop = '53px';
 		nav.style.textAlign = 'left';
 		nav.style.width = '200px';
 		nav.style.height = '100vh';
@@ -28,14 +29,13 @@ menu.addEventListener('click',()=>{
 		nav.style.justifyConten = 'flex-end';	
 		nav.style.position = 'fixed';
 		nav.style.right = '0px';
-		nav.style.flexDirection = 'column';		
+		nav.style.flexDirection = 'column';
+	}else{
+		nav.removeAttribute('style');
+		menu.removeAttribute('style');
+		menu.src = `img/menu_icon.png`;	
 	}
 });
-
-ul.addEventListener('click',()=>{
-	nav.style.display = 'none';
-	nav.querySelector('li:first-child').remove();
-})
 
 button.addEventListener('click',()=>{
 	if(extend.style.display !== 'flex'){
@@ -47,4 +47,5 @@ button.addEventListener('click',()=>{
 	}
 })
 
+document.body.clientWidth
 
