@@ -2,9 +2,9 @@ let h1 = document.querySelector('h1');
 let menu = document.querySelector('.menu-icon');
 let nav = document.querySelector('.nav-item');
 let a = document.querySelector('.xicon');
-let ul = document.querySelector('ul');
 let button = document.querySelector('button');
 let extend = document.querySelector('.extend');
+let li = document.querySelectorAll('li');
 
 h1.addEventListener('click',()=>{
 	if(h1.textContent == `Have a Good Time!`){
@@ -30,10 +30,21 @@ menu.addEventListener('click',()=>{
 		nav.style.position = 'fixed';
 		nav.style.right = '0px';
 		nav.style.flexDirection = 'column';
+		for(let i=0; i<li.length; i++){
+			li[i]
+			li[i].style.position = 'relative';
+			li[i].style.top = '-30px';
+			li[i].style.left = '-20px';
+			li[i].style.paddingBottom ='30px';
+			li[i].style.width = '50px'
+		}
 	}else{
 		nav.removeAttribute('style');
 		menu.removeAttribute('style');
 		menu.src = `img/menu_icon.png`;	
+		for(let i=0; i<li.length; i++){
+			li[i].removeAttribute('style');
+		}
 	}
 });
 
@@ -52,6 +63,9 @@ window.onresize = () =>{
 		nav.removeAttribute('style');
 		menu.removeAttribute('style');
 		menu.src = `img/menu_icon.png`;	
+		for(let i=0; i<li.length; i++){
+			li[i].removeAttribute('style');
+		}
 	}
 }
 
