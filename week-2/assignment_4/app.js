@@ -47,5 +47,11 @@ button.addEventListener('click',()=>{
 	}
 })
 
-document.body.clientWidth
+window.onresize = () =>{
+	if(document.documentElement.clientWidth >= 800){
+		nav.removeAttribute('style');
+		menu.removeAttribute('style');
+		menu.src = `img/menu_icon.png`;	
+	}
+}
 
