@@ -5,6 +5,7 @@ let a = document.querySelector('.xicon');
 let button = document.querySelector('button');
 let extend = document.querySelector('.extend');
 let li = document.querySelectorAll('li');
+let xicon = document.querySelector('.xicon');
 
 h1.addEventListener('click',()=>{
 	if(h1.textContent == `Have a Good Time!`){
@@ -16,11 +17,6 @@ h1.addEventListener('click',()=>{
 
 menu.addEventListener('click',()=>{
 	if(nav.style.display === ''){
-		menu.src = `img/x_icon.png`;
-		menu.style.paddingRight = `32px`;
-		menu.style.paddingLeft = `121px`;
-		menu.style.background = 'white';
-		nav.style.marginTop = '48px';
 		nav.style.textAlign = 'left';
 		nav.style.width = '200px';
 		nav.style.height = '100vh';
@@ -30,23 +26,26 @@ menu.addEventListener('click',()=>{
 		nav.style.position = 'fixed';
 		nav.style.right = '0px';
 		nav.style.flexDirection = 'column';
-		for(let i=0; i<li.length; i++){
-			li[i]
+		for(let i=1; i<li.length; i++){
 			li[i].style.position = 'relative';
 			li[i].style.top = '-30px';
 			li[i].style.left = '-20px';
 			li[i].style.paddingBottom ='30px';
 			li[i].style.width = '50px'
 		}
-	}else{
-		nav.removeAttribute('style');
-		menu.removeAttribute('style');
-		menu.src = `img/menu_icon.png`;	
-		for(let i=0; i<li.length; i++){
-			li[i].removeAttribute('style');
-		}
 	}
 });
+
+xicon.addEventListener('click',()=>{
+	nav.removeAttribute('style');
+	menu.src = `img/menu_icon.png`;	
+	for(let i=1; i<li.length; i++){
+		li[i].removeAttribute('style');
+	}
+});
+
+
+
 
 button.addEventListener('click',()=>{
 	if(extend.style.display !== 'flex'){
@@ -63,7 +62,7 @@ window.onresize = () =>{
 		nav.removeAttribute('style');
 		menu.removeAttribute('style');
 		menu.src = `img/menu_icon.png`;	
-		for(let i=0; i<li.length; i++){
+		for(let i=1; i<li.length; i++){
 			li[i].removeAttribute('style');
 		}
 	}

@@ -173,9 +173,6 @@ body {
 	text-align: center;
 }
 
-
-
-
 /* ================================= 
   Media Queries
 ==================================== */
@@ -355,6 +352,10 @@ body {
 	}
 
 	.menu-icon {
+		display: none;
+	}
+
+	.xicon {
 		display: none;
 	}
 
