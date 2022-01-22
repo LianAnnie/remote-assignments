@@ -2,7 +2,18 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//告訴Express要使用哪個模板引擎
+app.set('view engine','pug');
 
+//請求中間件(body parser解析器)
+const bodyParser = require('body-parser');
+//請求中間件(儲存cookie)
+const cookieParser = require('cookie-parser');
+
+//使用中間件
+//urlencoded解析器, 並將擴展碼取消
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 //加入靜態資料
 app.use('/',express.static('public'));
 
