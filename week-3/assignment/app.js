@@ -2,37 +2,24 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-//告訴Express要使用哪個模板引擎
-app.set('view engine','pug');
 
-//請求中間件(body parser解析器)
-const bodyParser = require('body-parser');
+//加入靜態資料
+app.use('/',express.static('public'));
 
-app.get('/', (req, res) => {
-  res.send('Hello My Server!');
-});
 
-app.get('/getData',(req, res) => {
-  const { number } = req.query;
-  let result = 0;
-  let integer = parseInt(number,10);
-  let formula =[];
-  let msg;
-  if (!number){
-    msg = 'Lack of Parameter';
-  }else if(isNaN(integer)){
-    msg = 'Wrong Parameter';
-  }else{
-    for(let i=1; i<=number; i++){
-      result += i;
-      formula.push(i);
-    }
-    formula = formula.join('+')
-    msg = `<h1>${result}</h1><p>=${formula}</p>`;
-  }
-  res.send(`${msg}`);
-});
+//JavaScript文件預設會使用index.js所以不用再特別指定(但其他文件就需要)
+const mainRoutes = require('./routes');
+const dataRoutes = require('./routes/getData')
+//運行
+app.use(mainRoutes);
+app.use('/getData', dataRoutes);
 
+
+app.use((req, res, next) =>{
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+}) 
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
