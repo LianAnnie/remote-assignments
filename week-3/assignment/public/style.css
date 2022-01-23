@@ -10,9 +10,11 @@
 }
 
 body {
-	margin: 0; padding: 0;  /*網頁通常預設是8px*/
+	margin: 0; padding: 50px;  /*網頁通常預設是8px*/
 	font-size: 100%; /*讓字型大小設定配合瀏覽器預設值,可以隨著螢幕大小變化*/
 	line-height: 1.5; /*行高預設*/
+	background-color: #EDEAD9;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 main {
@@ -91,6 +93,9 @@ content: "";
 
 input, button, select {
   vertical-align: middle; /*--讓表單內容資料置中對齊--*/
+  outline: none;
+  background-color: #8BD1FF;
+  color: #002554;
 }
 
 /*表格*/

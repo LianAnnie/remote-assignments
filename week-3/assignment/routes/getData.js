@@ -8,9 +8,9 @@ router.get('/',(req, res) => {
   let formula =[];
   let msg;
   if (!number){
-    msg = 'Lack of Parameter';
+    msg = '<h4>Lack of Parameter</h4>';
   }else if(isNaN(integer)){
-    msg = 'Wrong Parameter';
+    msg = '<h4>Wrong Parameter</h4>';
   }else{
     for(let i=1; i<=number; i++){
       result += i;
