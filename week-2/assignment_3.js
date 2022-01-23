@@ -1,6 +1,6 @@
 function avg(data){
 	let totalPrice =0;
-	let qty = data.size;
+	const qty = data.size;
 	for (let i = 0; i<qty; i++){
 		totalPrice += data.products[i].price;
 	}

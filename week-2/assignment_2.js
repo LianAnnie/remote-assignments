@@ -22,7 +22,7 @@ add(用類別或建構式產生的物件); // your another way
 */
 
 //First way
-let args1 = {n1:1,n2:2,op:'+'}
+const args1 = {n1:1,n2:2,op:'+'}
 console.log(calculate(args1)); 
 
 //Second way
@@ -33,5 +33,5 @@ class Arges {
 		this.op = op;
 	}
 }
-let args2 = new Arges(5,1,'-');
+const args2 = new Arges(5,1,'-');
 console.log(calculate(args2));

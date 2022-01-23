@@ -1,11 +1,11 @@
-let h1 = document.querySelector('h1');
-let menu = document.querySelector('.menu-icon');
-let nav = document.querySelector('.nav-item');
-let a = document.querySelector('.xicon');
-let button = document.querySelector('button');
-let extend = document.querySelector('.extend');
-let li = document.querySelectorAll('li');
-let xicon = document.querySelector('.xicon');
+const h1 = document.querySelector('h1');
+const menu = document.querySelector('.menu-icon');
+const nav = document.querySelector('.nav-item');
+const a = document.querySelector('.xicon');
+const button = document.querySelector('button');
+const extend = document.querySelector('.extend');
+const li = document.querySelectorAll('li');
+const xicon = document.querySelector('.xicon');
 
 h1.addEventListener('click',()=>{
 	if(h1.textContent == `Have a Good Time!`){
