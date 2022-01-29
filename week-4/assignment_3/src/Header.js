@@ -1,20 +1,46 @@
 import React, { Component } from 'react';
+
 class Header extends Component { 
   state ={
-    showNavItem: false
+    showNavItem: false,
+    liStyle:{
+      position:'relative',
+      top:'-30px',
+      left:'-20px',
+      paddingBottom:'30px',
+      width:'50px'
+    },
+    width: 0
   }
 
   showNavItem = () => {
     this.setState( prevState => {
-        return {showNavItem : !prevState.showNavItem}
+      return {showNavItem : !prevState.showNavItem}
+    })
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    if(window.innerWidth > 799){
+      this.setState(()=> {
+        return {showNavItem: false}
       })
+    }
   }
 
   render(){
     if(this.state.showNavItem){
       return(
         <header className="m-header">
-          <nav className="header-nav">
+          <nav className="header-nav" style={{height:'53px'}}>
             <p className="nav-title">Welcome Title</p>
             <p className="nav-logo">Logo</p>
             <ul className="nav-item" style={{
@@ -32,42 +58,10 @@ class Header extends Component {
                 src="img/x_icon.png" 
                 onClick={()=>this.showNavItem()} />
               </li>
-              <li style={{
-                position:'relative',
-                top:'-30px',
-                left:'-20px',
-                paddingBottom:'30px',
-                width:'50px'
-                }}>
-                <a href="#">home</a>
-              </li>
-              <li style={{
-                position:'relative',
-                top:'-30px',
-                left:'-20px',
-                paddingBottom:'30px',
-                width:'50px'
-                }}>
-                <a href="#">item1</a>
-              </li>
-              <li style={{
-                position:'relative',
-                top:'-30px',
-                left:'-20px',
-                paddingBottom:'30px',
-                width:'50px'
-                }}>
-                <a href="#">item2</a>
-              </li>
-              <li style={{
-                position:'relative',
-                top:'-30px',
-                left:'-20px',
-                paddingBottom:'30px',
-                width:'50px'
-                }}>
-                <a href="#">item3</a>
-              </li>
+              <li style={this.state.liStyle}><a href="#">home</a></li>
+              <li style={this.state.liStyle}><a href="#">item1</a></li>
+              <li style={this.state.liStyle}><a href="#">item2</a></li>
+              <li style={this.state.liStyle}><a href="#">item3</a></li>
             </ul>
           </nav>
         </header>
